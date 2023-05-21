@@ -26,5 +26,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # Verify installation
 sudo docker run hello-world
 
+# Docker compose
+sudo apt-get update
+sudo apt-get install docker-compose-plugin
+
+# Verify installation
+docker compose version
+
 # Post installation steps
 # https://docs.docker.com/engine/install/linux-postinstall/

@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  hue-gpt:
+    build:
+      context: ./services/hue-gpt
+      dockerfile: Dockerfile
+    command: npm start
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3000
+    user: "nextjs"
+    # volumes:
+    #   - ./services/hue-gpt:/app
+    env_file:
+      - .env.production
