@@ -1,0 +1,3 @@
+[submodule "services/hue-gpt"]
+	path = services/hue-gpt
+	url = git@github.com:Kajatin/hue-gpt.git
