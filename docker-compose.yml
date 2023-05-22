@@ -16,3 +16,27 @@ services:
     #   - ./services/hue-gpt:/app
     env_file:
       - .env.production
+
+  walkie-talkie-server:
+    build:
+      context: ./services/walkie-talkie/server
+      dockerfile: Dockerfile
+    command: npm start
+    ports:
+      - 4002:4002
+    environment:
+      - NODE_ENV=production
+      - PORT=4002
+
+  walkie-talkie-client:
+    build:
+      context: ./services/walkie-talkie/app
+      dockerfile: Dockerfile
+    command: npm start
+    ports:
+      - 3001:3001
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3001
+    user: "nextjs"

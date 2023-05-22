@@ -1,3 +1,6 @@
 [submodule "services/hue-gpt"]
 	path = services/hue-gpt
 	url = git@github.com:Kajatin/hue-gpt.git
+[submodule "services/walkie-talkie"]
+	path = services/walkie-talkie
+	url = git@github.com:Kajatin/walkie-talkie.git
