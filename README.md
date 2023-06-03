@@ -30,3 +30,8 @@ sudo systemctl start home-server
 
 This service is needs a `.env.local` file with credentials in `services/hue-gpt/`
 folder for `docker compose` to work.
+
+### `services/fleet-globe`
+
+This service is needs a `.env` file with credentials in `services/fleet-globe/backend/`
+folder for `docker compose` to work.

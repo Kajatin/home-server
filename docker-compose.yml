@@ -55,7 +55,7 @@ services:
       - NODE_ENV=production
       - PORT=8080
     env_file:
-      - ./services/fleet-globe/.env
+      - ./services/fleet-globe/backend/.env
     logging:
       driver: journald
 
