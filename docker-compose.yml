@@ -44,3 +44,27 @@ services:
     user: "nextjs"
     logging:
       driver: journald
+
+  fleet-globe-server:
+    build:
+      context: ./services/fleet-globe/backend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+    logging:
+      driver: journald
+
+  fleet-globe-client:
+    build:
+      context: ./services/fleet-globe/frontend
+      dockerfile: Dockerfile
+    ports:
+      - 4173:4173
+    environment:
+      - NODE_ENV=production
+      - PORT=4173
+    logging:
+      driver: journald

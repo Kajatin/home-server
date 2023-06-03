@@ -4,3 +4,6 @@
 [submodule "services/walkie-talkie"]
 	path = services/walkie-talkie
 	url = git@github.com:Kajatin/walkie-talkie.git
+[submodule "services/fleet-globe"]
+	path = services/fleet-globe
+	url = git@github.com:Kajatin/fleet-globe.git
