@@ -1,0 +1,14 @@
+[Unit]
+Description=home server service with docker compose
+PartOf=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/home/home-server/home-server
+ExecStart=/usr/bin/docker compose up --build --detach --remove-orphans
+ExecStop=/usr/bin/docker compose down --remove-orphans
+
+[Install]
+WantedBy=multi-user.target

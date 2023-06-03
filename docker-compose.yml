@@ -14,6 +14,8 @@ services:
     user: "nextjs"
     env_file:
       - ./services/hue-gpt/.env.local
+    logging:
+      driver: journald
 
   walkie-talkie-server:
     build:
@@ -25,6 +27,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=4002
+    logging:
+      driver: journald
 
   walkie-talkie-client:
     build:
@@ -38,3 +42,5 @@ services:
       - NEXT_TELEMETRY_DISABLED=1
       - PORT=3001
     user: "nextjs"
+    logging:
+      driver: journald
