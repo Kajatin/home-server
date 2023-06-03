@@ -6,6 +6,13 @@ generic use cases.
 
 I'm using a small form factor Lenovo ThinkCentre M910q with i5-7500T and 16GB RAM and 256GB storage.
 
+## Public
+
+These are the apps that are publicly available.
+
+* Walkie Talkie ([Link](https://walkie.rolandkajatin.com), [GitHub](https://github.com/Kajatin/walkie-talkie))
+* Fleet Globe ([Link](https://globe.rolandkajatin.com), [GitHub](https://github.com/Kajatin/fleet-globe))
+
 ## Services
 
 The services I'm running are all Dockerized.
