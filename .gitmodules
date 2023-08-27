@@ -7,3 +7,6 @@
 [submodule "services/fleet-globe"]
 	path = services/fleet-globe
 	url = git@github.com:Kajatin/fleet-globe.git
+[submodule "services/padel-club"]
+	path = services/padel-club
+	url = git@github.com:Kajatin/padel-club.git
