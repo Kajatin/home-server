@@ -101,27 +101,27 @@ services:
       driver: journald
     restart: unless-stopped
 
-  padel-club:
-    build:
-      context: ./services/padel-club
-      dockerfile: Dockerfile
-    command: npm start
-    ports:
-      - 3002:3002
-    environment:
-      - NODE_ENV=production
-      - NEXT_TELEMETRY_DISABLED=1
-      - PORT=3002
-    user: "nextjs"
-    logging:
-      driver: journald
-    restart: unless-stopped
+  # padel-club:
+  #   build:
+  #     context: ./services/padel-club
+  #     dockerfile: Dockerfile
+  #   command: npm start
+  #   ports:
+  #     - 3002:3002
+  #   environment:
+  #     - NODE_ENV=production
+  #     - NEXT_TELEMETRY_DISABLED=1
+  #     - PORT=3002
+  #   user: "nextjs"
+  #   logging:
+  #     driver: journald
+  #   restart: unless-stopped
 
-  pocketbase:
-    build:
-      context: ./services/padel-club
-      dockerfile: ./database/Dockerfile
-    ports:
-      - "8090:8090"
-    volumes:
-      - ./database/pb_data:/app/data/pb_data
+  # pocketbase:
+  #   build:
+  #     context: ./services/padel-club
+  #     dockerfile: ./database/Dockerfile
+  #   ports:
+  #     - "8090:8090"
+  #   volumes:
+  #     - ./services/padel-club/database/pb_data:/app/data/pb_data
