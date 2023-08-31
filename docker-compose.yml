@@ -73,55 +73,58 @@ services:
       driver: journald
     restart: unless-stopped
 
-  fleet-globe-server:
-    build:
-      context: ./services/fleet-globe/backend
-      dockerfile: Dockerfile
-    ports:
-      - 8080:8080
-    environment:
-      - NODE_ENV=production
-      - PORT=8080
-    env_file:
-      - ./services/fleet-globe/backend/.env
-    logging:
-      driver: journald
-    restart: unless-stopped
-
-  fleet-globe-client:
-    build:
-      context: ./services/fleet-globe/frontend
-      dockerfile: Dockerfile
-    ports:
-      - 4173:4173
-    environment:
-      - NODE_ENV=production
-      - PORT=4173
-    logging:
-      driver: journald
-    restart: unless-stopped
-
-  # padel-club:
+  # fleet-globe-server:
   #   build:
-  #     context: ./services/padel-club
+  #     context: ./services/fleet-globe/backend
   #     dockerfile: Dockerfile
-  #   command: npm start
   #   ports:
-  #     - 3002:3002
+  #     - 8080:8080
   #   environment:
   #     - NODE_ENV=production
-  #     - NEXT_TELEMETRY_DISABLED=1
-  #     - PORT=3002
-  #   user: "nextjs"
+  #     - PORT=8080
+  #   env_file:
+  #     - ./services/fleet-globe/backend/.env
   #   logging:
   #     driver: journald
   #   restart: unless-stopped
 
-  # pocketbase:
+  # fleet-globe-client:
   #   build:
-  #     context: ./services/padel-club
-  #     dockerfile: ./database/Dockerfile
+  #     context: ./services/fleet-globe/frontend
+  #     dockerfile: Dockerfile
   #   ports:
-  #     - "8090:8090"
-  #   volumes:
-  #     - ./services/padel-club/database/pb_data:/app/data/pb_data
+  #     - 4173:4173
+  #   environment:
+  #     - NODE_ENV=production
+  #     - PORT=4173
+  #   logging:
+  #     driver: journald
+  #   restart: unless-stopped
+
+  padel-club:
+    build:
+      context: ./services/padel-club
+      dockerfile: Dockerfile
+    command: npm start
+    ports:
+      - 3002:3002
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3002
+      - DATABASE=postgres://postgres:postgres@postgres:5432/postgres
+    user: "nextjs"
+    env_file:
+      - ./services/padel-club/.env.local
+    logging:
+      driver: journald
+    restart: unless-stopped
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./services/padel-club/postgres-data:/var/lib/postgresql/data
