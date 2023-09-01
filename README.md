@@ -11,7 +11,8 @@ I'm using a small form factor Lenovo ThinkCentre M910q with i5-7500T and 16GB RA
 These are the apps that are publicly available.
 
 * Walkie Talkie ([Link](https://walkie.rolandkajatin.com), [GitHub](https://github.com/Kajatin/walkie-talkie))
-* Fleet Globe ([Link](https://globe.rolandkajatin.com), [GitHub](https://github.com/Kajatin/fleet-globe))
+* ~~Fleet Globe~~ ([Link](https://globe.rolandkajatin.com), [GitHub](https://github.com/Kajatin/fleet-globe))
+* Padel Club ([Link](https://padel.rolandkajatin.com), [GitHub](https://github.com/Kajatin/padel-club))
 
 ## Services
 
@@ -41,4 +42,9 @@ folder for `docker compose` to work.
 ### `services/fleet-globe`
 
 This service is needs a `.env` file with credentials in `services/fleet-globe/backend/`
+folder for `docker compose` to work.
+
+### `services/padel-club`
+
+This service is needs a `.env.local` file with credentials in `services/padel-club/`
 folder for `docker compose` to work.
