@@ -101,31 +101,31 @@ services:
   #     driver: journald
   #   restart: unless-stopped
 
-  padel-club:
-    build:
-      context: ./services/padel-club
-      dockerfile: Dockerfile
-    command: npm start
-    ports:
-      - 3002:3002
-    environment:
-      - NODE_ENV=production
-      - NEXT_TELEMETRY_DISABLED=1
-      - PORT=3002
-      - DATABASE=postgres://postgres:postgres@postgres:5432/postgres
-      - TZ=Europe/Copenhagen
-    user: "nextjs"
-    env_file:
-      - ./services/padel-club/.env.local
-    logging:
-      driver: journald
-    restart: unless-stopped
+  # padel-club:
+  #   build:
+  #     context: ./services/padel-club
+  #     dockerfile: Dockerfile
+  #   command: npm start
+  #   ports:
+  #     - 3002:3002
+  #   environment:
+  #     - NODE_ENV=production
+  #     - NEXT_TELEMETRY_DISABLED=1
+  #     - PORT=3002
+  #     - DATABASE=postgres://postgres:postgres@postgres:5432/postgres
+  #     - TZ=Europe/Copenhagen
+  #   user: "nextjs"
+  #   env_file:
+  #     - ./services/padel-club/.env.local
+  #   logging:
+  #     driver: journald
+  #   restart: unless-stopped
 
-  postgres:
-    image: postgres
-    environment:
-      - POSTGRES_PASSWORD=postgres
-    ports:
-      - 5432:5432
-    volumes:
-      - ./services/padel-club/postgres-data:/var/lib/postgresql/data
+  # postgres:
+  #   image: postgres
+  #   environment:
+  #     - POSTGRES_PASSWORD=postgres
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #     - ./services/padel-club/postgres-data:/var/lib/postgresql/data
